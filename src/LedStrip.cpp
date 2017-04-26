@@ -60,12 +60,6 @@ void LedStrip::setColor(char *hexColor, bool smoothChange) {
 	this->setColor(decodeColor(hexColor), smoothChange);
 }
 
-void LedStrip::setLightIntensity(double intensity, bool smoothChange) {
-	if (intensity < 0 || intensity > 1) return;
-	Color newColor = this->color * intensity;
-	this->setColor(newColor, smoothChange);
-}
-
 void LedStrip::setMaxTimePerColorChange(uint16_t milliseconds) {
 	this->timePerTrasition = milliseconds/255;
 }
